@@ -1,13 +1,7 @@
-
-
 #ifndef MotorSpeed_h
 #define MotorSpeed_h
 
-#include "Arduino.h"
-#include <Wire.h>
-
-
-
+#include "core.h"
 
 class Motor {
   public:
@@ -21,7 +15,9 @@ class Motor {
     int speed;
 };
 
-
-
+extern Motor motor1;
+extern Motor motor2;
+extern Motor motor3;
+extern Motor motor4;
 
 #endif
