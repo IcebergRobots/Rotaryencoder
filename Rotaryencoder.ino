@@ -20,7 +20,7 @@ void setup()
   //Adresse 8 für den atmega vorne(Encoder 0 und 3)
   //Adresse 9 für den atmega hinten(Encoder 1 und 2)
   //================================================WICHTIG==============================================
-  Wire.begin(9);
+  Wire.begin(7);
   Wire.onRequest(requestEvent);
   //Serial.begin(57600);
   //Serial.println("SimplePollRotator example for the RotaryEncoder library.");
@@ -49,8 +49,11 @@ void loop() {
 
 void requestEvent() {
   byte data[2];
-  data[0] = encoder.getPosition();
-  data[1] = encoder2.getPosition();
+  data[0] = speed;
+  data[1] = speed2;
   Wire.write(data, 2);
   //Serial.println(String(speed) + " " + String(speed2));
-}
+  //Wire.write(42);
+} 
+
+
